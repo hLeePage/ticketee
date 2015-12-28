@@ -20,4 +20,12 @@ RSpec.feature "Users can create new tickets" do
     expect(page).to have_content "Name can't be blank"
     expect(page).to have_content "Description can't be blank"
   end
+
+  scenario "with an invalid description" do
+    fill_in "Name", with: "Non-standards compliance"
+    fill_in "Description", with: "Beavis?"
+    click_button "Create Ticket"
+    expect(page).to have_content "Ticket has not been created."
+    expect(page).to have_content "Description is too short"
+  end
 end
