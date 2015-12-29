@@ -2,14 +2,17 @@ require "rails_helper"
 
 RSpec.feature "Users can view tickets" do
   before do
+    author = FactoryGirl.create(:user)
     atom = FactoryGirl.create(:project, name: "Atom")
     FactoryGirl.create(:ticket, project: atom,
+                       author: author,
                        name: "Get on up!",
                        description: "You got to stay on the scene.")
 
     ie = FactoryGirl.create(:project, name: "Internet Explorer")
     FactoryGirl.create(:ticket, project: ie,
                        name: "Standards compliance",
+                       author: author,
                        description: "This is so poor, people.")
     visit "/"
   end
