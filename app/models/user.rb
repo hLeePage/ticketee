@@ -1,9 +1,15 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  def active_for_authentication?
+    super && archived_at.nil?
+  end
+
+  def inactive_message
+    archived_at.nil? ? super : :archived
+  end
+  
   def to_s
     "#{email} (#{admin? ? "Admin" : "User"})"
   end
