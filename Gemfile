@@ -14,18 +14,20 @@ gem 'rails', '4.2.4'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem "simple_form", "~> 3.1.0"
-gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
 
 group :development, :test do
+  gem 'pry'
   gem 'byebug'
   gem "rspec-rails", "~> 3.2.1"
 end
 
 group :test do
   gem "capybara", "~> 2.4"
+  gem "database_cleaner", "~> 1.4"
   gem "factory_girl_rails", "~> 4.5"
+  gem "selenium-webdriver", "~> 2.45"
 end
 
 group :development do
