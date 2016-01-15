@@ -20,6 +20,7 @@
       <% end %>
     </ul>
   </header>
+
   <table id="attributes">
    <tr>
      <th>Author:</th>
@@ -29,7 +30,14 @@
      <th>Created:</th>
      <td><%= time_ago_in_words(@ticket.created_at) %> ago</td>
    </tr>
+   <% if @ticket.state.present? %>
+     <tr>
+       <th>State:</th>
+       <td><%= render @ticket.state %></td>
+     </tr>
+   <% end %>
   </table>
+
   <%= simple_format(@ticket.description) %>
 
   <% if @ticket.attachments.any? %>
