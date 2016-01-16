@@ -27,4 +27,8 @@ class TicketPolicy < ApplicationPolicy
     destroy?
   end
 
+  def tag?
+    destroy?
+  end
+
 end
