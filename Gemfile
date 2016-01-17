@@ -27,12 +27,12 @@ end
 group :test do
   gem "capybara", "~> 2.4"
   gem "database_cleaner", "~> 1.4"
+  gem "email_spec", "~> 1.6.0"
   gem "factory_girl_rails", "~> 4.5"
   gem "selenium-webdriver", "~> 2.45"
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
-
   gem 'spring'
 end
