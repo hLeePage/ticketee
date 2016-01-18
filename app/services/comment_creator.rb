@@ -4,7 +4,6 @@ class CommentCreator
   def self.build(scope, current_user, comment_params)
     comment = scope.build(comment_params)
     comment.author = current_user
-    
    new(comment)
   end
 
@@ -22,5 +21,5 @@ class CommentCreator
     (@comment.ticket.watchers - [@comment.author]).each do |user|
       CommentNotifier.created(@comment, user).deliver_now
     end
-  end
+  end 
 end
