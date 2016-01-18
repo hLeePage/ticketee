@@ -9,6 +9,7 @@ gem "fog"
 gem "font-awesome-rails", "~> 4.3"
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
+gem 'net-ssh'
 gem 'pg'
 gem 'puma'
 gem "pundit", "~> 0.3.0"
