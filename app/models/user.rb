@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   scope :excluding_archived, lambda { where(archived_at: nil) }
 
   def role_on(project)
-    roles.find_by(project_id: project).try(:name)
+    roles.find_by(project_id: project).try(:role)
   end
-  
+
 end
