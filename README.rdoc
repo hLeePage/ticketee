@@ -1,3 +1,0 @@
-== README
-
-This work in progress is a Ticket Tracking App as detailed in "Rails 4 in Action"
